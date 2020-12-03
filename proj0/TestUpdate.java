@@ -1,7 +1,7 @@
 import java.math.*;
 
 /**
- *  Tests Planet's update() method
+ *  Tests Body's update() method
  */
 public class TestUpdate {
 
@@ -30,12 +30,12 @@ public class TestUpdate {
 
 
     /**
-     *  Checks the Planet class to make sure update works.
+     *  Checks the Body class to make sure update works.
      */
     private static void checkUpdate() {
         System.out.println("Checking update...");
 
-        Planet p1 = new Planet(1.0, 1.0, 3.0, 4.0, 5.0, "jupiter.gif");
+        Body p1 = new Body(1.0, 1.0, 3.0, 4.0, 5.0, "jupiter.gif");
 
         p1.update(2.0, 1.0, -0.5);
 

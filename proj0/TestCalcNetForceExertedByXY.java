@@ -40,31 +40,31 @@ public class TestCalcNetForceExertedByXY {
     }
 
     /**
-     *  Checks the Planet class to make sure calcNetForceExertedByXY works.
+     *  Checks the Body class to make sure calcNetForceExertedByXY works.
      */
     private static void calcNetForceExertedByXY() {
         System.out.println("Checking calcNetForceExertedByXY...");
 
-        Planet p1 = new Planet(1.0, 1.0, 3.0, 4.0, 5.0, "jupiter.gif");
-        Planet p2 = new Planet(2.0, 1.0, 3.0, 4.0, 4e11, "jupiter.gif");
+        Body p1 = new Body(1.0, 1.0, 3.0, 4.0, 5.0, "jupiter.gif");
+        Body p2 = new Body(2.0, 1.0, 3.0, 4.0, 4e11, "jupiter.gif");
         
-        Planet p3 = new Planet(4.0, 5.0, 3.0, 4.0, 5.0, "jupiter.gif");
-        Planet p4 = new Planet(3.0, 2.0, 3.0, 4.0, 5.0, "jupiter.gif");
+        Body p3 = new Body(4.0, 5.0, 3.0, 4.0, 5.0, "jupiter.gif");
+        Body p4 = new Body(3.0, 2.0, 3.0, 4.0, 5.0, "jupiter.gif");
 
-        Planet[] planets = {p2, p3, p4};
+        Body[] Bodys = {p2, p3, p4};
 
-        double xNetForce = p1.calcNetForceExertedByX(planets);
-        double yNetForce = p1.calcNetForceExertedByY(planets);
+        double xNetForce = p1.calcNetForceExertedByX(Bodys);
+        double yNetForce = p1.calcNetForceExertedByY(Bodys);
 
         checkEquals(133.4, round(xNetForce, 2), "calcNetForceExertedByX()");
         checkEquals(0.0, round(yNetForce, 2), "calcNetForceExertedByY()");
     
-        System.out.println("Running test again, but with array that contains the target planet.");
+        System.out.println("Running test again, but with array that contains the target Body.");
 
-        planets = new Planet[]{p1, p2, p3, p4};
+        Bodys = new Body[]{p1, p2, p3, p4};
 
-        xNetForce = p1.calcNetForceExertedByX(planets);
-        yNetForce = p1.calcNetForceExertedByY(planets);
+        xNetForce = p1.calcNetForceExertedByX(Bodys);
+        yNetForce = p1.calcNetForceExertedByY(Bodys);
 
         checkEquals(133.4, round(xNetForce, 2), "calcNetForceExertedByX()");
         checkEquals(0.0, round(yNetForce, 2), "calcNetForceExertedByY()");
